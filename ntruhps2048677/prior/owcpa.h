@@ -1,0 +1,21 @@
+#ifndef OWCPA_H
+#define OWCPA_H
+
+#include "params.h"
+#include "poly.h"
+
+void owcpa_keypair(unsigned char *pk,
+                   unsigned char *sk,
+                   const unsigned char seed[NTRU_SAMPLE_FG_BYTES]);
+
+void owcpa_enc(unsigned char *c,
+               poly *r,
+               const poly *m,
+               const unsigned char *pk);
+
+int owcpa_dec(unsigned char *rm,
+              const unsigned char *ciphertext,
+              const unsigned char *secretkey);
+
+#endif
+
